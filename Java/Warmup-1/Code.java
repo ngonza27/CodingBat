@@ -83,4 +83,125 @@ class Code {
     public boolean or35(int n) {
         return n%3==0 || n%5==0; 
     }
-}
+
+
+    public boolean startHi(String str) {
+        return str.length() >= 2 && str.substring(0,2).equals("hi");
+    }
+    
+
+    public boolean icyHot(int temp1, int temp2) {
+        return (temp1>100 && temp2<0) || (temp1<0 && temp2>100);
+    }
+
+
+    public boolean in1020(int a, int b) {
+        return (a>=10 && a<=20) || (b>=10 && b<=20);
+    } 
+
+
+    public boolean hasTeen(int a, int b, int c) {
+        return (a>=13 && a<=19) || 
+               (b>=13 && b<=19) ||
+               (c>=13 && c<=19);
+    }
+
+
+    public boolean loneTeen(int a, int b) {
+        return (a>=13 && a<=19) && !(b>=13 && b<=19) ||
+               !(a>=13 && a<=19) && (b>=13 && b<=19);
+    }
+
+
+    public String delDel(String str) {
+        return str.length() >=4 && str.substring(1,4).equals("del") ? 
+               str.charAt(0)+str.substring(4) :
+               str;
+    }
+
+
+    public boolean mixStart(String str) {
+        return str.length() >=3 && str.substring(1,3).equals("ix");
+    }   
+
+
+    public String startOz(String str) {
+        String res = "";
+        if (str.length() <=2)
+          return str;
+        if(str.charAt(0) == 'o')
+          res+="o";
+        if(str.charAt(1) == 'z')
+          res+="z";
+        return res;
+    }
+
+
+    public int intMax(int a, int b, int c) {
+        int max=a;
+        if(b>c)
+          max=b;
+        if(c>b)
+          max=c;
+        if(a>max)
+          max=a;
+        return max;
+    }
+
+
+    public int close10(int a, int b) {
+        if (Math.abs(10-a) == Math.abs(10-b))
+          return 0;
+        if (Math.abs(10-a) < Math.abs(10-b))
+          return a;
+        return b;
+    }
+      
+    
+    public boolean in3050(int a, int b) {
+        return ((a>=30 && a<=40) && (b>=30 && b<=40)) ||
+               ((a>=40 && a<=50) && (b>=40 && b<=50));
+    }      
+
+
+    public int max1020(int a, int b) {
+        if((a<10 || a>20) && (b>20 || b<10))
+          return 0;
+        if ((a>=10 && a<=20) && (a>b) || (b>20 || b<10))
+          return a;
+        return b;
+    }      
+
+
+    public boolean stringE(String str) {
+        int count = 0;
+        for(int c=0 ; c<str.length(); c++){
+          if(str.charAt(c) == 'e')
+            count+=1;
+        }
+        return (count >=1 && count <= 3);
+    }
+      
+
+    public boolean lastDigit(int a, int b) {
+        return a == b%10 || b == a%10;
+    }
+    
+
+    public String endUp(String str) {
+        return str.length() < 3 ? str.toUpperCase() :
+               str.substring(0,str.length()-3) + 
+               str.substring(str.length()-3).toUpperCase(); 
+    }
+    
+    
+    public String everyNth(String str, int n) {
+        String solution = ""+str.charAt(0);
+        for(int i=1; i < str.length(); ++i){
+          if(i%n == 0)
+            solution=solution+str.charAt(i);
+        }
+        return solution;
+    }
+      
+}   
