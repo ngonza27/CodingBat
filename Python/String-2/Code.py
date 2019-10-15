@@ -35,6 +35,7 @@ def count_code(str):
       count=count+1
   return count
 
+
 def end_other(a, b):
   a_=a.lower()
   b_=b.lower()
